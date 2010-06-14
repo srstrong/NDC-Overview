@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 -Parallel.For ImageConversion", "ImageConversion\01 -Parallel.For ImageConversion.csproj", "{89AF0925-F4CA-4FD4-BF8D-C43AF6BF0B71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 - Parallel.For ImageConversionWithProgressIndication", "ImageConversionWithProgressIndication\02 - Parallel.For ImageConversionWithProgressIndication.csproj", "{26D8C662-F059-4794-943E-B07B97373CCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 - UIThread Tasks", "UIThread\04 - UIThread Tasks.csproj", "{EC1B8763-401F-4371-A658-44D67CE63C41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 - Continuations", "Continuations\03 - Continuations.csproj", "{A248FEA5-B09C-4E61-8658-56CF17F25228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 - PLinq", "PLinq\06 - PLinq.csproj", "{3E5D8AC4-7EE9-459B-8D35-896E8E35CF95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 - CooperativeCancellation", "CooperativeCancellation\05 - CooperativeCancellation.csproj", "{34348FF3-7543-456C-B819-B0910AFE636E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89AF0925-F4CA-4FD4-BF8D-C43AF6BF0B71}.Debug|x86.ActiveCfg = Debug|x86
+		{89AF0925-F4CA-4FD4-BF8D-C43AF6BF0B71}.Debug|x86.Build.0 = Debug|x86
+		{89AF0925-F4CA-4FD4-BF8D-C43AF6BF0B71}.Release|x86.ActiveCfg = Release|x86
+		{89AF0925-F4CA-4FD4-BF8D-C43AF6BF0B71}.Release|x86.Build.0 = Release|x86
+		{26D8C662-F059-4794-943E-B07B97373CCE}.Debug|x86.ActiveCfg = Debug|x86
+		{26D8C662-F059-4794-943E-B07B97373CCE}.Debug|x86.Build.0 = Debug|x86
+		{26D8C662-F059-4794-943E-B07B97373CCE}.Release|x86.ActiveCfg = Release|x86
+		{26D8C662-F059-4794-943E-B07B97373CCE}.Release|x86.Build.0 = Release|x86
+		{EC1B8763-401F-4371-A658-44D67CE63C41}.Debug|x86.ActiveCfg = Debug|x86
+		{EC1B8763-401F-4371-A658-44D67CE63C41}.Debug|x86.Build.0 = Debug|x86
+		{EC1B8763-401F-4371-A658-44D67CE63C41}.Release|x86.ActiveCfg = Release|x86
+		{EC1B8763-401F-4371-A658-44D67CE63C41}.Release|x86.Build.0 = Release|x86
+		{A248FEA5-B09C-4E61-8658-56CF17F25228}.Debug|x86.ActiveCfg = Debug|x86
+		{A248FEA5-B09C-4E61-8658-56CF17F25228}.Debug|x86.Build.0 = Debug|x86
+		{A248FEA5-B09C-4E61-8658-56CF17F25228}.Release|x86.ActiveCfg = Release|x86
+		{A248FEA5-B09C-4E61-8658-56CF17F25228}.Release|x86.Build.0 = Release|x86
+		{3E5D8AC4-7EE9-459B-8D35-896E8E35CF95}.Debug|x86.ActiveCfg = Debug|x86
+		{3E5D8AC4-7EE9-459B-8D35-896E8E35CF95}.Debug|x86.Build.0 = Debug|x86
+		{3E5D8AC4-7EE9-459B-8D35-896E8E35CF95}.Release|x86.ActiveCfg = Release|x86
+		{3E5D8AC4-7EE9-459B-8D35-896E8E35CF95}.Release|x86.Build.0 = Release|x86
+		{34348FF3-7543-456C-B819-B0910AFE636E}.Debug|x86.ActiveCfg = Debug|x86
+		{34348FF3-7543-456C-B819-B0910AFE636E}.Debug|x86.Build.0 = Debug|x86
+		{34348FF3-7543-456C-B819-B0910AFE636E}.Release|x86.ActiveCfg = Release|x86
+		{34348FF3-7543-456C-B819-B0910AFE636E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
