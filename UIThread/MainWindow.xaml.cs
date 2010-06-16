@@ -40,29 +40,29 @@ namespace UIThread
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            // For best results use 1024 x 768 jpg files at 32bpp.
-            var files = System.IO.Directory.GetFiles(@"C:\Users\Public\Pictures\Sample Pictures\", "*.jpg");
+// For best results use 1024 x 768 jpg files at 32bpp.
+var files = System.IO.Directory.GetFiles(@"C:\Users\Public\Pictures\Sample Pictures\", "*.jpg");
 
-            _fileCount = files.Length;
-            var loadImageTasks = new Task<byte[]>[_fileCount];
+_fileCount = files.Length;
+var loadImageTasks = new Task<byte[]>[_fileCount];
 
-            // Spin off a task to load each image
-            for (var i = 0; i < _fileCount; i++)
-            {
-                var x = i;
-                loadImageTasks[x] = Task.Factory.StartNew(() => LoadImage(files[x]));
-            }
+// Spin off a task to load each image
+for (var i = 0; i < _fileCount; i++)
+{
+    var x = i;
+    loadImageTasks[x] = Task.Factory.StartNew(() => LoadImage(files[x]));
+}
 
-            // When they've all been loaded, tile them into a single byte array.
-            var tiledImageTask = Task.Factory.ContinueWhenAll(loadImageTasks, i => TileImages(i));
+// When they've all been loaded, tile them into a single byte array.
+var tiledImageTask = Task.Factory.ContinueWhenAll(loadImageTasks, i => TileImages(i));
 
-            // We are currently on the UI thread. Save the sync context and pass it to
-            // the next task so that it can access the UI control "image1".
-            var uiSyncContext = TaskScheduler.FromCurrentSynchronizationContext();
+// We are currently on the UI thread. Save the sync context and pass it to
+// the next task so that it can access the UI control "image1".
+var uiSyncContext = TaskScheduler.FromCurrentSynchronizationContext();
 
-            // On the UI thread, put the bytes into a bitmap and
-            // and display it in the Image control.
-            tiledImageTask.ContinueWith(antedecent => DisplayTiledImage(antedecent.Result), uiSyncContext);
+// On the UI thread, put the bytes into a bitmap and
+// and display it in the Image control.
+tiledImageTask.ContinueWith(antedecent => DisplayTiledImage(antedecent.Result), uiSyncContext);
         }
 
         void DisplayTiledImage(byte[] tiledImage)

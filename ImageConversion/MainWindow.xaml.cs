@@ -27,8 +27,8 @@ namespace ImageConversion
 
             var backBuffer = bitmap.BackBuffer;
 
-            for (var row = 0; row < height; row++)
-            //Parallel.For(0, height, row =>
+            //for (var row = 0; row < height; row++)
+            Parallel.For(0, height, row =>
             {
                 for (var column = 0; column < width; column++)
                 {
@@ -39,7 +39,7 @@ namespace ImageConversion
                     SetPixel(pixel, backBuffer, column, row, stride);
                 }
             }
-            //);
+            );
 
             bitmap.AddDirtyRect(new Int32Rect(0, 0, bitmap.PixelWidth, bitmap.PixelHeight));
 

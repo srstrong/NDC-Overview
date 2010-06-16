@@ -8,28 +8,28 @@ namespace CooperativeCancellation
     {
         static void Main()
         {
-            var tokenSource = new CancellationTokenSource();
+    var tokenSource = new CancellationTokenSource();
 
-            var options = new ParallelOptions { CancellationToken = tokenSource.Token };
+    var options = new ParallelOptions { CancellationToken = tokenSource.Token };
 
-            Task.Factory.StartNew(() =>
-            {
-                try
-                {
-                    Parallel.For(0, 1000, options, i => DoWork(i, options.CancellationToken));
-                }
-                catch (OperationCanceledException)
-                {
-                    Console.WriteLine("Loop operation was cancelled");
-                }
-            });
+    Task.Factory.StartNew(() =>
+    {
+        try
+        {
+            Parallel.For(0, 1000, options, i => DoWork(i, options.CancellationToken));
+        }
+        catch (OperationCanceledException)
+        {
+            Console.WriteLine("Loop operation was cancelled");
+        }
+    });
 
-            Thread.Sleep(250);
+    Thread.Sleep(250);
 
-            Console.WriteLine("Cancelling work...");
-            tokenSource.Cancel();
+    Console.WriteLine("Cancelling work...");
+    tokenSource.Cancel();
 
-            Thread.Sleep(1000);
+    Thread.Sleep(1000);
         }
 
         private static void DoWork(int iteration, CancellationToken cancellationToken)
@@ -37,7 +37,7 @@ namespace CooperativeCancellation
             // Simulate some long running task
             for (var i = 0; i < 5; i++)
             {
-                Console.WriteLine("Working... (iteration {0}, loop {1})", iteration, i);
+                Console.WriteLine("Working... (iteration {0}, loop {1}, thread {2})", iteration, i, Thread.CurrentThread.ManagedThreadId);
                 Thread.Sleep(10);
                 
                 cancellationToken.ThrowIfCancellationRequested();

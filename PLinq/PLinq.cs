@@ -9,6 +9,7 @@ namespace PLinq
     {
         static void Main()
         {
+            
         }
 
         static void Example1()
@@ -105,7 +106,7 @@ namespace PLinq
         {
             var query = Enumerable.Range(1, 1000)
                                 .AsParallel()
-                                //.AsOrdered()
+                              //  .AsOrdered()
                                 .Where(item => item % 2 == 0 );
 
             foreach (var item in query)

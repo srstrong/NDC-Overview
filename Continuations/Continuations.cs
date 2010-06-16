@@ -45,16 +45,16 @@ namespace Continuations
         private static void ContinueWithExceptions()
         {
             var task = new Task<Stream>(() =>
-                                        WebRequest.Create("http://www.goadfogle.com")
+                                        WebRequest.Create("http://www.goadfasdfogle.com")
                                                   .GetResponse()
                                                   .GetResponseStream()
                 );
 
-            var successTask = task.ContinueWith(t => Console.WriteLine("Request successful"),
-                                             TaskContinuationOptions.OnlyOnRanToCompletion);
+var successTask = task.ContinueWith(t => Console.WriteLine("Request successful"),
+                                    TaskContinuationOptions.OnlyOnRanToCompletion);
 
-            var errorTask = task.ContinueWith(t => Console.WriteLine("Task failed: {0}", t.Exception), 
-                                           TaskContinuationOptions.OnlyOnFaulted);
+var errorTask = task.ContinueWith(t => Console.WriteLine("Task failed: {0}", t.Exception), 
+                                TaskContinuationOptions.OnlyOnFaulted);
 
             task.Start();
 
